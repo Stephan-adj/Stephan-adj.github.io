@@ -172,36 +172,63 @@ pagination:
 
 
         <!-- Machine Learning -->
-        {%- assign fourth_post = site.pages[0] -%}
+        {%- assign kmeans = site.pages[0] -%}
         <div class="mb-3 d-flex align-items-center">
-                {% if fourth_post.image_index %}
+                {% if kmeans.image_index %}
                 <div class="col-md-4">
-                <a href="{{site.baseurl}}{{fourth_post.url}}">
-                <img class="w-100" src="{% if fourth_post.image_index contains "://" %}{{ fourth_post.image_index }}{% else %}{{site.baseurl}}/{{ fourth_post.image_index }}{% endif %}" alt="{{ fourth_post.title }}">
+                <a href="{{site.baseurl}}{{kmeans.url}}">
+                <img class="w-100" src="{% if kmeans.image_index contains "://" %}{{ kmeans.image_index }}{% else %}{{site.baseurl}}/{{ kmeans.image_index }}{% endif %}" alt="{{ kmeans.title }}">
                 </a>
                 </div>
                 {% endif %}
                 <div>
                     <h2 class="mb-2 h6 font-weight-bold">
-                    <a class="text-dark" href="{{site.baseurl}}{{fourth_post.url}}">{{ fourth_post.title }}</a>
+                    <a class="text-dark" href="{{site.baseurl}}{{kmeans.url}}">{{ kmeans.title }}</a>
                     </h2>
                     <small class="d-block text-muted">
                         In <span class="catlist">
-                        {% for category in fourth_post.categories %}
+                        {% for category in kmeans.categories %}
                         <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
                         {% endfor %}
                         </span>
                     </small>
                     <small class="text-muted">
-                        {{ fourth_post.date | date: '%b %d, %Y' }}
+                        {{ kmeans.date | date: '%b %d, %Y' }}
                     </small>
                 </div>
             </div>
-        {% for post in site.pages %}
+
+
+            {%- assign buyme = site.pages[3] -%}
+            <div class="mb-3 d-flex align-items-center">
+                    {% if buyme.image_index %}
+                    <div class="col-md-4">
+                    <a href="{{site.baseurl}}{{buyme.url}}">
+                    <img class="w-100" src="{% if buyme.image_index contains "://" %}{{ buyme.image_index }}{% else %}{{site.baseurl}}/{{ buyme.image_index }}{% endif %}" alt="{{ buyme.title }}">
+                    </a>
+                    </div>
+                    {% endif %}
+                    <div>
+                        <h2 class="mb-2 h6 font-weight-bold">
+                        <a class="text-dark" href="{{site.baseurl}}{{buyme.url}}">{{ buyme.title }}</a>
+                        </h2>
+                        <small class="d-block text-muted">
+                            In <span class="catlist">
+                            {% for category in buyme.categories %}
+                            <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
+                            {% endfor %}
+                            </span>
+                        </small>
+                        <small class="text-muted">
+                            {{ buyme.date | date: '%b %d, %Y' }}
+                        </small>
+                    </div>
+                </div>
+
+        {%- assign buyme = site.pages[7] -%}
             <li>
               <a href="{{ post.url }}">{{ post.title }}</a>
             </li>
-          {% endfor %}
 
 
         {% for post in paginator.posts %}
