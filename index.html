@@ -197,7 +197,11 @@ pagination:
                     </small>
                 </div>
             </div>
-
+        {% for post in site.pages %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
 
 
         {% for post in paginator.posts %}
