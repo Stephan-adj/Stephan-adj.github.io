@@ -1,0 +1,65 @@
+# Site
+### For SEO : see https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+title: "PythonMood | Let's code with Lulu"
+tagline: "Luc Bertin's Python tutorials"
+description: "Luc Bertin's blog of Python theoretical and hands-on tutorials. Here we cover Python from scratch and some use cases for Data Science related subjects"
+#url: "blog.lucbertin.com"
+lang: "en_US"
+##### 
+
+
+name: 'PythonMood'
+#description: ''
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/favicon.ico'
+baseurl: ''
+email: 'contact@lucbertin.com'
+mailchimp-list: 'https://lucbertin.us17.list-manage.com/subscribe/post?u=d6950dcfd0604ff36eab68a15&amp;id=3816b7374b'
+
+include: ["_pages"]
+permalink: /:title/
+
+# Plugins
+plugins: 
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
+  
+authors:
+    luc:
+      name:           Luc
+      site:           https://lucbertin.com
+      avatar:         /assets/images/avatar1.jpg
+      bio:            "Hi, my name is Luc. To me, code is art and i love coding in Python, hence the website !"
+      email:          contact@lucbertin.com
+      github:         https://github.com/Luc-Bertin
+      medium:         https://medium.com/@lucbtn
+      linkedin:       https://www.linkedin.com/in/luc-b-291904ab/
+ 
+# Defaults
+defaults:
+
+  # all posts
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
+      author: Luc
+      avatar: /assets/images/avatar1.jpg
+      
+  # all pages
+  - scope:
+      path: "_pages"
+    values:
+      layout: page
+      
+# Syntax
+markdown: kramdown
+highlighter: rouge
+
+# Paginate
+paginate: 10
+
+# Exclude metadata and development time dependencies (like Grunt plugins)
+exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
