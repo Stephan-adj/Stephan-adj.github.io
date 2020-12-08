@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Webscrapping using Selenium"
-author: luc
+author: stéphan
 categories: [ TDs, Lecture, Selenium, Python]
 image_folder: /assets/images/post_webscrapping/
 image: assets/images/post_webscrapping/index_img/cover.jpg
@@ -29,7 +29,7 @@ Every web browser are different in their ways of performing operations, *Seleniu
 * Downstream, one * " browser driver"* (many exist), i.e. *"**one** Selenium WebDriver implementation"* , is a layer:
 
 > responsible for delegating down to the browser, and handles communication to and from Selenium and the browser.
-To do so, it uses the automation APIs provided by the browser vendors. 
+To do so, it uses the automation APIs provided by the browser vendors.
 
 * Upstream, Webdriver API also refers to the language bindings to enable developpers to write test cases in different languages like Python, Java, C#, Ruby or NodeJS.
 
@@ -52,7 +52,7 @@ https://engineering.zalando.com/posts/2016/03/selenium-webdriver-explained.html?
 Also Safari Dev docs [highlights this schema](https://developer.apple.com/documentation/webkit/testing_with_webdriver_in_safari)
 
 
-**Edit:**  WebDriver W3C Living Document has [replaced](https://www.guru99.com/introduction-webdriver-comparison-selenium-rc.html) JSON Wire Protocol. 
+**Edit:**  WebDriver W3C Living Document has [replaced](https://www.guru99.com/introduction-webdriver-comparison-selenium-rc.html) JSON Wire Protocol.
 
 > Note from wikipedia: *Where possible*, WebDriver uses native operating system level functionality rather than browser-based JavaScript commands to drive the browser. This bypasses problems with subtle differences between native and JavaScript commands, including security restrictions.
 
@@ -82,8 +82,8 @@ We could also use the driver [context manager](http://sametmax.com/les-context-m
 
 
 ```python
-from selenium import webdriver # 
-driver = webdriver.Chrome() 
+from selenium import webdriver #
+driver = webdriver.Chrome()
 
 ##
 ## Your operations
@@ -120,8 +120,8 @@ driver.close() # to close the browser tab (window if there is only one tab.)
     # Note that you can use directly on a webelement:
     # <webelement>.find_element_by...()  will use the element as the scope in which to search for your selector. https://stackoverflow.com/questions/26882604/selenium-difference-between-webdriver-findelement-and-webelement-findelement
     # An example provided here https://github.com/Luc-Bertin/TDs_ESILV/blob/master/webscrapping_test2find_element.ipynb
-    # 
-    # 
+    #
+    #
     # When no element exist: NoSuchElementException is raised
 
     # ! find elementS return a list of Web elements !
@@ -355,7 +355,7 @@ pile_of_actions = ActionChains(driver)
 # 3. stack of actions (not performed yet)
 actions.move_to_element(menu) # moving the mouse to the middle of the element
 actions.click(hidden_submenu)
-# 4. perform the stored actions in the order it was defined (top to bottom) 
+# 4. perform the stored actions in the order it was defined (top to bottom)
 actions.perform()
 ```
 
@@ -378,7 +378,7 @@ Here is an example of such:
 
 ## additional infos
 
-DOM: Document Object Model 
+DOM: Document Object Model
 Wikipedia best describes it:
 
 <img src="{{page.image_folder}}DOM.png" width="600px" style="display: inline-block;" class="center">

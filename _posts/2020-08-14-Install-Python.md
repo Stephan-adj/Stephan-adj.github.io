@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Install Python !"
-author: luc
+author: stéphan
 categories: [ TDs, Python ]
 image_folder: /assets/images/post_install_python/
 image: assets/images/post_install_python/cover.jpg
@@ -36,17 +36,17 @@ Recently running on Mac OS Catalina, i've noticed a python3 executable located i
 4 solutions here for an installation of a personnal Python, best one is definitely last one ! 2nd one is not bad either for beginners.
 
 #### 1. From the Python docs:
-> The Apple-provided build of Python is installed in /System/Library/Frameworks/Python.framework and /usr/bin/python, respectively. You should never modify or delete these, as they are Apple-controlled and are used by Apple- or third-party software. Remember that if you choose to install a newer Python version from python.org, you will have two different but functional Python installations on your computer, so it will be important that your paths and usages are consistent with what you want to do. 
+> The Apple-provided build of Python is installed in /System/Library/Frameworks/Python.framework and /usr/bin/python, respectively. You should never modify or delete these, as they are Apple-controlled and are used by Apple- or third-party software. Remember that if you choose to install a newer Python version from python.org, you will have two different but functional Python installations on your computer, so it will be important that your paths and usages are consistent with what you want to do.
 You can read the [docs](https://docs.python-guide.org/starting/install3/osx/) to have a simple installation yet functionnal. This is the simplest approach to get a Python3 interpreter.
 
-#### 2. Another [article](https://docs.python-guide.org/starting/install3/osx/) suggests using the Homebrew approach, 
+#### 2. Another [article](https://docs.python-guide.org/starting/install3/osx/) suggests using the Homebrew approach,
 Homebrew is a free downloadable package manager tool for MacOS (similar to apt-get for Ubuntu), and leaves it manage and update for us the python version using:
  ```brew update && brew upgrade python```
 
-which we would call later on using **python3** command (or creating a **shebang on top of the file to instruct the shell to use the python3 executable**). 
+which we would call later on using **python3** command (or creating a **shebang on top of the file to instruct the shell to use the python3 executable**).
 
 Note that using shortcut like **shell aliases** to prefer using "python" over "python3" imply 2 things:
-* aliases takes precedence over PATH browsing, but in case not corresponding aliases are defined or no shell are being involved (don't forget that aliases are a shell feature), PATH will be read. 
+* aliases takes precedence over PATH browsing, but in case not corresponding aliases are defined or no shell are being involved (don't forget that aliases are a shell feature), PATH will be read.
 * using aliases might cause problems in case of virtual environments (pip aliased to pip3 won't look at virtual env pip one!)
 
 #### 3. Using PyEnv
@@ -60,23 +60,23 @@ You can then define a Python version to run globally, or per-project basis !
 
 **Step-by-Step process:**
 
- Install pyenv using Homebrew 
- 
+ Install pyenv using Homebrew
+
  - ```brew install pyenv```
- 
+
  Install a version of Python using pyenv
- 
+
  - ```pyenv install 3.8.5```
- 
+
  To have pyenv effects available at each shell instantiation you need to modify the bashrc or zshrc file:
- 
+
  ```sh
  ## does pyenv exist as a command ? then init pyenv and virtualenv
  if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
  fi
  ```
- 
+
 **Use cases:**
 
 1. Wanna define this version of Python as a global version ? (and not care about system Python):
@@ -117,7 +117,7 @@ From official Python docs:
 #### 1. Pyenv-win
 For windows user: https://github.com/pyenv-win/pyenv-win
 
-#### 2. Anaconda: 
+#### 2. Anaconda:
 Installation using the GUI installer
 From the anaconda docs:
 > Should I add Anaconda to the Windows PATH?

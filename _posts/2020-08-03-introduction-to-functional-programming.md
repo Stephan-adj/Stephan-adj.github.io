@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Introduction to functional programming"
-author: luc
+author: stéphan
 categories: [ TDs, Lecture, Python]
 image_folder: /assets/images/post_functional_programming/
 image: assets/images/post_functional_programming/cover.png
@@ -14,7 +14,7 @@ toc: true
 
 You've probably heard of list comprehension in Python before. It is a declarative-like, concise, and generally easier way to read than a simple for loop.
 
-Example: 
+Example:
 ```python
 [x ** 2 for x in [0,1,2]]
 ```
@@ -35,7 +35,7 @@ What are the shared similarities among all of these built-in types ?
 
 <img src="{{page.image_folder}}post_image2.png" width="500px" style="display: inline-block;" class=".center">
 
-# Why functional programming ? 
+# Why functional programming ?
 
 Picking up the definition from the python docs: functional programming is the principle of breaking down a problem into a set of functions which take inputs and produce outputs. They have no internal states subject to altering the output produced for a given input, and act deterministically for some given conditions.
 We can therefore in a certain way oppose functional programming to object-oriented programming in which an instance of a class can see its internal state, represented by its attributes, be modified internally by the call of associated methods.
@@ -71,7 +71,7 @@ We can call ```dir()```, a built-in function that returns a list of attributes a
 
 
 We can see that ```__next__``` does not exist here. List is therefore *not* an iterator.
-On the other hand, we see that the ```__iter__()``` method exists: 
+On the other hand, we see that the ```__iter__()``` method exists:
 
 <img src="{{page.image_folder}}post_image4.png" width="500px" style="display: inline-block;" class=".center">
 
@@ -114,9 +114,9 @@ We also see that only the dictionary keys are returned here. (Reminder, if we wa
 
 <img src="{{page.image_folder}}post_image10.png" width="500px" style="display: inline-block;" class=".center">
 
- 
+
 Isn't this behavior similar to what you would get by looping with for?
- 
+
 This is what is implicitly done when looping through a dictionary or a list:
 As the python documentation shows, these 2 loops are equivalent.
 ```python
@@ -156,7 +156,7 @@ class Counter:
         self.high = high
      def __iter__(self):
         return self
-     def __next__(self): 
+     def __next__(self):
         self.current += 1
         if self.current < self.high:
             return self.current
@@ -184,7 +184,7 @@ Reading line by line using a for loop implicitly calls the readline method, so o
 
 We can therefore [only traverse the file once](https://stackoverflow.com/questions/25645039/readline-in-a-loop-is-not-working-in-python
 ) (unless we reopen and recreate another iterator), and can just load the lines on demand that we want!
- 
+
 <img src="{{page.image_folder}}post_image13.png" width="500px" style="display: inline-block;" class=".center">
 
 
@@ -218,7 +218,7 @@ When we use a list comprehension, every element of the list have been computed a
 
 <img src="{{page.image_folder}}post_image18.png" width="500px" style="display: inline-block;" class=".center">
 
-When we use a gen expression, elements of the sequence are evaluated only when requested (lazy evaluation). This lead to use less memory and sometimes, depending on what you do thereafter, an increase in performance. 
+When we use a gen expression, elements of the sequence are evaluated only when requested (lazy evaluation). This lead to use less memory and sometimes, depending on what you do thereafter, an increase in performance.
 
 Note that ```range(start, stop[, step])``` here is actually an iterable. It does not implement ```__next__``` unless you call ```iter()``` on it. However, range implement lazyness implementation, just like previously showed iterators, it will [always take the same (small) amount of memory, no matter the size of the range it represents (as it only stores the start, stop and step values, calculating individual items and subranges as needed)](https://docs.python.org/3/library/functions.html). Also range has the nice property to be indexable, which is not the case of our simple generator expression.
 
@@ -293,7 +293,7 @@ hence, yield does not only preserve local variable but gives us an entrypoint to
 Now that you have a good grasp on how to design one-time objects that read through a sequence of elements, it is to browse some built-in Python functions that leverage use of iterators.
 
 ## any() and all()
-Clearly the first ones that come up to my mind: those functions are evaluating trueness of elements of a sequence. 
+Clearly the first ones that come up to my mind: those functions are evaluating trueness of elements of a sequence.
 * any return True if **any** element of a sequence is true (caution: 0 and None are falsy)
 * all return True is **all** element of a sequence evaluates to true.
 But the most interesting about those 2 functions is that they are lazy, this means,  they abort as soon as the outcome is clear. Combined to a generator expression, this could drastically improve performance rather than using a list-comprehension (hence resulting in returning a complete list first before evaluating trueness of the elements)
@@ -313,7 +313,7 @@ By the way, you can delete the parentheses when the generator expression is used
 ## map(function, sequence(s)) (imap in Python 2+)
 
 In Python 2 (deprecated as of 2020), imap is the lazy version of map.
-In Python 3+, map replaced imap. 
+In Python 3+, map replaced imap.
 Thus as of Python3+, just use only map. **map** returns a map object an iterator and evaluates an iterator as parameter lazily evaluated.
 
 <img src="{{page.image_folder}}post_image22.png" width="500px" style="display: inline-block;" class=".center">
@@ -327,7 +327,7 @@ Also returns an iterator, whose content has been filtered from another sequence.
 * 2nd parameter: iterable
 evaluation
 
-Note that filter(function, iterable) is equivalent to the generator expression (item for item in iterable if function(item)) if function is not None and (item for item in iterable if item) if function is None. 
+Note that filter(function, iterable) is equivalent to the generator expression (item for item in iterable if function(item)) if function is not None and (item for item in iterable if item) if function is None.
 
 ```filter(None, range(0,10000000000000000000))```
 
@@ -383,7 +383,7 @@ We could also use `multiprocessing.imap` to **fed** sequentially chuncks (or ele
 <img src="{{page.image_folder}}multiprocessing_template_script.png" width="500px" style="display: inline-block;" class=".center">
 
 
-I've also found a smart implementation using `map`along with ```itertools.islice```, which will **still go through** the iterator (can't slice at any place without calling next on preceding elements as iterator are stateful), but has the benefit to be lazy: 
+I've also found a smart implementation using `map`along with ```itertools.islice```, which will **still go through** the iterator (can't slice at any place without calling next on preceding elements as iterator are stateful), but has the benefit to be lazy:
     ```pool.imap(function, itertools.islice(iter, N))```
 [here](https://stackoverflow.com/questions/5318936/python-multiprocessing-pool-lazy-iteration)
 
@@ -391,5 +391,3 @@ I've also found a smart implementation using `map`along with ```itertools.islice
 
 
 That's all for this tutorial, I hope it was informative and concise enough, don't hesitate to reach me or comment below for any questions.
-
-
