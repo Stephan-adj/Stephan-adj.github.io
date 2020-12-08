@@ -4,18 +4,18 @@ layout: default
 permalink: "/author-stéphan.html"
 ---
 
-<!--{% assign author = site.authors[stéphan] %}-->
+{% assign author = site.authors["stéphan"] %}
 <div class="container">
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="row align-items-center mb-5">
             <div class="col-md-9">
-                <h2 class="font-weight-bold">{{page.title}} <span class="small btn btn-outline-success btn-sm btn-round"><a href="{{ site.authors[stéphan].github }}">Follow on Github</a></span></h2>
-                <p><a href="{{ site.authors[stéphan].site }}">{{ site.authors.stéphan.site }}</a></p>
+                <h2 class="font-weight-bold">{{page.title}} <span class="small btn btn-outline-success btn-sm btn-round"><a href="{{ author.github }}">Follow on Github</a></span></h2>
+                <p><a href="{{ author.site }}">{{ site.authors.stéphan.site }}</a></p>
                 <p class="excerpt">{{ site.authors.stéphan.bio }}</p>
             </div>
             <div class="col-md-3 text-right">
-                <img alt="{{ site[stéphan].stéphan.name }}" src="{{site.baseurl}}{{ site.authors[stéphan].avatar }}" class="rounded-circle" height="100" width="100">
+                <img alt="{{ author.name }}" src="{{site.baseurl}}{{ author.avatar }}" class="rounded-circle" height="100" width="100">
             </div>
         </div>
         <h4 class="font-weight-bold spanborder"><span>Posts by {{page.title}}</span></h4>
