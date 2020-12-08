@@ -1,4 +1,4 @@
-### Python Blog - Stéphan Adjarian Copyright (C) 2020
+### Portfolio- Stéphan Adjarian Copyright (C) 2020
 Content authored by [Stéphan]()
 
 ### Jekyll Theme - Mundana. Copyright (C) 2019 WowThemes.net.
