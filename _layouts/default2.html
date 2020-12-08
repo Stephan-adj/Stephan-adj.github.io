@@ -24,11 +24,12 @@
 
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/dark.css">
 
-    <!-- Jquery on header to make sure everything works, the rest  of the scripts in footer for fast loading -->
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+
+    <!-- Mathjax Support -->
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    {% include tracking-header.html %}
 </head>
 
 <body class="{% if page.url == "/" %} homefirstpage {% endif %}">
