@@ -20,10 +20,6 @@ permalink: "/author-stéphan.html"
             </div>
         </div>
         <h4 class="font-weight-bold spanborder"><span>Posts by {{page.title}}</span></h4>
-            {% assign posts = site.pages | where:"author","stéphan" %}
-            {% for post in posts %}
-            {% include main-loop-card.html %}
-            {% endfor %}
             {% assign posts = site.posts | where:"author","stéphan" %}
             {% for post in posts %}
             {% include main-loop-card.html %}
