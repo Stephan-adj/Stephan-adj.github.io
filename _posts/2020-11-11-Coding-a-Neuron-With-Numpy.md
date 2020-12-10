@@ -41,7 +41,7 @@ scalar = 4.2 # a real number
 
 We are going to use the *array* constructor to create such vector.<br>
 The numpy `ndim` attribute gives the number of dimensions.<br>
-The numpy `shape` attribute gives the number of elements in each dimensions, hence returning a *tuple*.<br> 
+The numpy `shape` attribute gives the number of elements in each dimensions, hence returning a *tuple*.<br>
 The numpy `size` attribute gives the number of elements in the array. You could also do the product between each number of elements in each dimension to get the same value: `np.prod(array.shape)`.<br>
 
 ```python
@@ -76,7 +76,7 @@ But it is going to make sense as we express a vector as **matrix column vector**
 
 
 ```python
-(vector_1D_of_multiple_elements, 
+(vector_1D_of_multiple_elements,
 vector_1D_of_multiple_elements.shape,
 vector_1D_of_multiple_elements.ndim)
 ```
@@ -95,8 +95,8 @@ Hence using the array constructor: the argument can be a **list of lists**, as *
 
 
 ```python
-matrix = np.array([ 
-            [ 1, 2, 3], 
+matrix = np.array([
+            [ 1, 2, 3],
             [ 4, 5, 6]
           ])
 ```
@@ -159,7 +159,7 @@ vector_1D.reshape((1,1,1))
 
     array([[[4]]])
 
-Nor the number of elements neither the values did change. 
+Nor the number of elements neither the values did change.
 
 ```python
 vector_1D_of_multiple_elements.size
@@ -355,8 +355,8 @@ pd.DataFrame(vector_1D_of_multiple_elements.T)
 </table>
 </div>
 
- 
-If we were to use the **DataFrame constructor** on the vector, and THEN use the attribute `shape` (recall that pandas also share similarities in its API with numpy one), you can see that the vector as been turn in a "(matrix) column vector" (a matrix with only one column and multiple rows). 
+
+If we were to use the **DataFrame constructor** on the vector, and THEN use the attribute `shape` (recall that pandas also share similarities in its API with numpy one), you can see that the vector as been turn in a "(matrix) column vector" (a matrix with only one column and multiple rows).
 
 ```python
 pd.DataFrame(vector_1D_of_multiple_elements).shape
@@ -581,7 +581,7 @@ except:
     print("Again, not aligned because in maths you do the transpose of the vector1 ")
 ```
 
-    Again, not aligned because in maths you do the transpose of the vector1 
+    Again, not aligned because in maths you do the transpose of the vector1
 
 
 <img src="{{page.image_folder}}dot product.png" width="100%">
@@ -649,7 +649,7 @@ vector1 + vector2
 
 
 
-* different shapes, what to do ? 
+* different shapes, what to do ?
 
 <u>**Example1:**</u>
 
@@ -754,12 +754,12 @@ vector1.shape, vector2.shape
 
 
 1. 2 rows in `vector1`, `vector2` does not have "rows dimension", prepended a 1 to create a new dimension
-2. then `vector2` is stretched on its new dim so to have 2 elements, as `vector1` 
+2. then `vector2` is stretched on its new dim so to have 2 elements, as `vector1`
 3. while `vector1` has last dimensions (columns) strecthed to have 3 elements, as `vector2`
 
 
 ```python
-vector1 + vector2 
+vector1 + vector2
 ```
 
 
@@ -835,7 +835,7 @@ except Exception as e:
 ```
 
     After prepending with 1 the vector2, impossible to match 2 to 3:
-    operands could not be broadcast together with shapes (2,3) (2,) 
+    operands could not be broadcast together with shapes (2,3) (2,)
 
 
 Another example:
@@ -865,7 +865,7 @@ plt.show()
 <img src="{{page.image_folder}}output_80_0.png" align="left" width="100%">
 
 
-How to find the coefficient $$\beta$$s (here the intercept $$\beta$$0 and the slope $$\beta$$1) in order to have the best fitting (simple) linear model ? 
+How to find the coefficient $$\beta$$s (here the intercept $$\beta$$0 and the slope $$\beta$$1) in order to have the best fitting (simple) linear model ?
 
 ## The plotting function
 
@@ -978,7 +978,7 @@ plotting(*params.stack().idxmin())
 
 2 nice definitions i like, just stolen from [there](https://people.minesparis.psl.eu/fabien.moutarde/ES_MachineLearning/Slides/MLP-NeuralNetworks_course_2pp.pdf)
 
-> A **processing “unit”** applying a **simple operation to its inputs**, and which can be **“connected” to others** to build a **network** able to realize any input-output function 
+> A **processing “unit”** applying a **simple operation to its inputs**, and which can be **“connected” to others** to build a **network** able to realize any input-output function
 
 > “Usual” definition: a “unit” computing a **weighted sum of its inputs**, that can add a constant term, and **apply some non-linearity (sigmoïd, ReLU, ...)**
 
@@ -1036,7 +1036,7 @@ x = x[:, np.newaxis]
 the weight matrix:
 
 ```python
-W = np.random.random(size=(x.shape[1], 1)) 
+W = np.random.random(size=(x.shape[1], 1))
 # randomly generated weights
 # depends on the number of features/cols in X
 # 1xk for simple linear regression
@@ -1047,11 +1047,11 @@ W = np.random.random(size=(x.shape[1], 1))
 and the bias term:
 
 ```python
-B = np.random.random(size=(x.shape[0], 1)) 
-# one bias term for each neuron 
+B = np.random.random(size=(x.shape[0], 1))
+# one bias term for each neuron
 # does not depend on the number of features in the data
 # 1 neuron here -> as one single output variable y_pred,
-# 1 bias then. 
+# 1 bias then.
 # it will be broadcoasted to the number of rows/data points
 # hence applied on each input k (of 1 feature each)
 ```
@@ -1134,7 +1134,7 @@ $$ W_{p,1} = W_{p,1} - \alpha \frac{\partial \E[L(Y_{n,1}, \hat{Y_{n,1}})]}{\par
 
 with $$n$$ a **grouped collection of n data points**, also named a **batch**.
 - $$n$$ could be $$<= k$$ the number of data points for the entire (training) dataset
-- if $$n$$ equals to $$k$$, then the entire meaned predictions errors on the entire dataset as input has been used to drive the update process of each of the weights in the weight column matrix 
+- if $$n$$ equals to $$k$$, then the entire meaned predictions errors on the entire dataset as input has been used to drive the update process of each of the weights in the weight column matrix
 $$ W_{p,1} $$
 
 
@@ -1152,14 +1152,14 @@ Here we face a **composite function**, as computing such derivative w.r.t one we
 <img src="{{page.image_folder}}Gradient-descent.png" align="left" width="100%">
 
 
-### Recap 
+### Recap
 
 Here is just the same picture as before, so to always cross check everything is done right while creating the `Neuron` class for creating in the next section.
 
 <img src="{{page.image_folder}}1neuron.png" align="left" width="100%">
 
 
-### Time to implement it 
+### Time to implement it
 
 which activation are we going to use ?
 
@@ -1195,7 +1195,7 @@ def split_n_batch_indexes(X, nb_chunks=5):
 ```python
 class Neuron:
     """ Implementation of a single Neuron accepting multiple inputs """
-    def __init__(self, X, y, nb_epochs=100, nb_batches=5, 
+    def __init__(self, X, y, nb_epochs=100, nb_batches=5,
                  learning_rate=0.01, activation="linear"):
         self.X, self.y = X, y
         # random weights
@@ -1204,7 +1204,7 @@ class Neuron:
         self.B = np.random.random(size=(1, 1))
         # number of epochs
         self.nb_epochs = nb_epochs
-        # number of batches 
+        # number of batches
         self.nb_batches = nb_batches
         # learning rate
         self.learning_rate = learning_rate
@@ -1214,18 +1214,18 @@ class Neuron:
             self.derivative = lambda x: 1
         # records
         self.records = {}
-                
+
     def forward_pass(self, is_batch):
         """ a single forward pass to compute a prediction """
         self.y_pred_batch = self.activation( self.X[is_batch] @ self.W + self.B)
         self.y_pred = self.activation( self.X @ self.W + self.B)
-        
+
     def compute_mse_on_whole_dataset(self):
         """ return the mean squared errors on whole training set"""
         self.mse = np.mean((self.y - self.y_pred)**2)
-        
+
     def backpropagation(self, is_batch):
-        """ compute the gradient of the errors with respect to 
+        """ compute the gradient of the errors with respect to
         the weights using the chain rule """
         # gradient of the errors w.r.t the output/prediction
         dE_dout = 2*(self.y_pred_batch - self.y[is_batch, np.newaxis])
@@ -1237,11 +1237,11 @@ class Neuron:
         self.dE_dw = dE_dout * dout_dz * dz_dw
         # for the biases (only last part change)
         self.dE_db = dE_dout * dout_dz * 1        
-    
+
     def update_weights_and_biases(self):
         dE_dw = self.dE_dw.mean(axis=0)[:, np.newaxis]
         dE_db = self.dE_db.mean(axis=0)[:, np.newaxis]
-        
+
         self.W = self.W - self.learning_rate * dE_dw
         self.B = self.B - self.learning_rate * dE_db
 
@@ -1249,16 +1249,16 @@ class Neuron:
     def predict(self, X_test):
         """ same as forward pass, just provide our own X"""
         return self.activation( X_test @ self.W + self.B)
-    
+
     def run(self):
         """ learn iteratively:
             - an iteration is a single forward and backward pass
-            - an epoch is consumed when all the inputs from the 
-              dataset have been used for updating the weight and 
+            - an epoch is consumed when all the inputs from the
+              dataset have been used for updating the weight and
               biases """
         # epochs
         for i in range(1, self.nb_epochs):
-            # batches: 
+            # batches:
             for batch_i, indices in enumerate(
                     split_n_batch_indexes(self.X, self.nb_batches)):
                 self.forward_pass(indices)
@@ -1301,7 +1301,7 @@ records = neuron.run()
 ```python
 import pandas as pd
 index = pd.MultiIndex.from_tuples(records.keys())
-records = pd.DataFrame(records.values(), 
+records = pd.DataFrame(records.values(),
             index=index,
             columns=['weights', 'bias', 'mse_train'])
 records
@@ -1582,7 +1582,7 @@ def animate(i):
     plt.legend()
     x_ = np.linspace(-2, 2, 100).reshape((100,1))
     line.set_xdata(x_)  # update the data
-    line.set_ydata( float(df.iloc[i, 0])*x_ 
+    line.set_ydata( float(df.iloc[i, 0])*x_
                    + float(df.iloc[i, 1]))# update the data
     return line,
 
@@ -1624,8 +1624,8 @@ print( "linear regression coefficients {}".format(lm.coef_) )
 ## With our Neuron
 
 ```python
-neuron_on_boston = Neuron(X_train, y_train, 
-                          learning_rate=0.1, 
+neuron_on_boston = Neuron(X_train, y_train,
+                          learning_rate=0.1,
                           nb_batches=1)
 records_on_boston = neuron_on_boston.run()
 ```
@@ -1634,7 +1634,7 @@ records_on_boston = neuron_on_boston.run()
 ```python
 import pandas as pd
 index = pd.MultiIndex.from_tuples(records_on_boston.keys())
-df_boston = pd.DataFrame(records_on_boston.values(), 
+df_boston = pd.DataFrame(records_on_boston.values(),
             index=index, columns=['weights', 'bias', 'mse_train'])
 df_weights = df_boston.weights.apply(np.ravel).apply(pd.Series)
 df_bias = df_boston.bias.apply(np.ravel).apply(pd.Series)
@@ -1692,7 +1692,7 @@ plt.bar(x=np.arange(len(lm.coef_)), height=at_98, color='white', alpha = 0.5)
 <img src="{{page.image_folder}}output_163_1.png" align="left" width="100%">
 
 
-## Add-on: using Keras ? 
+## Add-on: using Keras ?
 
 
 ```python
@@ -1719,15 +1719,15 @@ from keras.callbacks import LambdaCallback
 weights = {}
 def save_weights(epoch, logs):
     weights[epoch] = model.layers[0].get_weights()
-    
+
 keep_weights = LambdaCallback(on_epoch_end=save_weights)
 ```
 
 
 ```python
-history = model.fit(x=X_train, y=y_train, 
-                    batch_size=X_train.shape[0], epochs=99, 
-                    validation_data=(X_test, y_test), 
+history = model.fit(x=X_train, y=y_train,
+                    batch_size=X_train.shape[0], epochs=99,
+                    validation_data=(X_test, y_test),
                     verbose=0, callbacks=[keep_weights])
 ```
 
@@ -1756,8 +1756,8 @@ losses_.plot(kind="line")
 ```python
 df_weights = pd.DataFrame(weights).T
 coefs_linear_reg = dict(zip(
-    ["weight_{}".format(_) for _ in range(len(lm.coef_))], 
-    lm.coef_ 
+    ["weight_{}".format(_) for _ in range(len(lm.coef_))],
+    lm.coef_
 ))
 coefs_linear_reg
 ```

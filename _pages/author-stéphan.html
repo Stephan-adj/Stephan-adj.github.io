@@ -24,6 +24,10 @@ permalink: "/author-stéphan.html"
             {% for post in posts %}
             {% include main-loop-card.html %}
             {% endfor %}
+            {% assign posts = site.posts | where:"author","stéphan" %}
+            {% for post in posts %}
+            {% include main-loop-card.html %}
+            {% endfor %}
     </div>
 </div>
 </div>
