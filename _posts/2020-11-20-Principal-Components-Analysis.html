@@ -457,7 +457,7 @@ iris = read.csv(&#39;iris.data&#39;)</code></pre>
 </div>
 <div id="exploratory-analysis" class="section level2">
 <h2>Exploratory analysis</h2>
-<p>First let us investigate the dataset to understand its structure. What one can do is comparing the means and the quartiles of the 3 different flower classes for the 4 different features.</p>
+<p>First, let us investigate the dataset to understand its structure. What one can do is comparing the means and the quartiles of the 3 different flower classes for the 4 different features.</p>
 <pre class="r"><code>boxplot(sepal_length ~ iris$class, data = iris, col = color_palette, main = &quot;Boxplot of the sepal length&quot;)
 boxplot(sepal_width ~ iris$class, data = iris, col = color_palette, main = &quot;Boxplot of the sepal width&quot;)
 boxplot(petal_length ~ iris$class, data = iris, col = color_palette, main = &quot;Boxplot of the petal length&quot;)
