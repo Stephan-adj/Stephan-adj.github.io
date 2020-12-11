@@ -41,10 +41,12 @@
     {% include tracking-header.html %}
 
 
+</head>
 
-
+<body class="{% if page.url == "/" %} homefirstpage {% endif %}">
 
     <!-- Navbar -->
+    <div style="box-sizing:initial;font-weight:initial;font-weight:initial;">
     <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
         <a class="text-dark" href="https://stephan-adj.github.io/"><strong>{{site.name}}   </strong></a>
@@ -61,12 +63,7 @@
         </div>
     </div>
     </nav>
-
-</head>
-
-<body class="{% if page.url == "/" %} homefirstpage {% endif %}">
-
-
+  </div>
     <!-- Search Results -->
     <div id="lunrsearchresults">
         <ul class="mb-0"></ul>
