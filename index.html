@@ -169,26 +169,7 @@ pagination:
     <div class="col-md-8 main-loop">
 
         <h4 class="font-weight-bold spanborder"><span>All Posts</span></h4>
-
-
-            {%- assign buyme = site.pages[2] -%}
-            <div class="mb-3 d-flex align-items-center">
-                    {% if buyme.image_index %}
-                    <div class="col-md-4">
-                    <a href="{{site.baseurl}}{{buyme.url}}">
-                    <img class="w-100" src="{% if buyme.image_index contains "://" %}{{ buyme.image_index }}{% else %}{{site.baseurl}}/{{ buyme.image_index }}{% endif %}" alt="{{ buyme.title }}">
-                    </a>
-                    </div>
-                    {% endif %}
-                    <div>
-                        <h2 class="mb-2 h6 font-weight-bold">
-                        <a class="text-dark" href="{{site.baseurl}}{{buyme.url}}">{{ buyme.title }}</a>
-                        </h2>
-                    </div>
-                </div>
-
-
-
+        
         {% for post in paginator.posts %}
 
             {% include main-loop-card.html %}
