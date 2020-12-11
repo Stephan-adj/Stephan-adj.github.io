@@ -1,6 +1,6 @@
 # Site
 ### For SEO : see https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-title: "Portfolio"
+title: "ROAD2DATASCIENCE"
 tagline: "Stéphan Adjarian's data science"
 description: "Stéphan Adjarian's personal website. Data Science students"
 #url: "blog.lucbertin.com"
@@ -8,7 +8,7 @@ lang: "en_US"
 #####
 
 
-name: 'Portfolio'
+name: 'ROAD2DATASCIENCE'
 #description: ''
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
@@ -31,7 +31,7 @@ authors:
       name:           Stéphan
       site:
       avatar:         /assets/images/avatar.jpg
-      bio:            "Hi, my name is Stéphan. Here is my personal website."
+      bio:            "Computer science student in Paris."
       email:          stephan.adjarian@free.fr
       github:         https://github.com/Stephan-adj
       linkedin:       https://www.linkedin.com/in/st%C3%A9phan-adjarian/
