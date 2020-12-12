@@ -13129,21 +13129,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 style="text-align:center">Webscraping to plot some interesting graphs about energy consumption</h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="This-website-provide-interesting-materials-in-energy-sector:-bp.com">This website provide interesting materials in energy sector: <a href="https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy/year-in-review.html">bp.com</a><a class="anchor-link" href="#This-website-provide-interesting-materials-in-energy-sector:-bp.com">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Firstly, we're gonna install and import everthing we need.</p>
+<p>In this article we will try to retrieve information using webscraping to plot some interesting graphs about energy consumption. This website provide interesting materials in energy sector: <a href="https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy/year-in-review.html">bp.com</a>.
+Firstly, we're gonna install and import everthing we need.</p>
 
 </div>
 </div>
@@ -13182,7 +13169,8 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">IFrame</span>
-<span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy/year-in-review.html&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">450</span><span class="p">)</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy/year-in-review.html&#39;</span><span class="p">,</span>
+       <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">450</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14652,7 +14640,7 @@ Name: Energy Source, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> jupyter nbconvert --to html <span class="s2">&quot;Energy_Webscraping.ipynb&quot;</span>
@@ -14672,8 +14660,8 @@ Name: Energy Source, dtype: object</pre>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[NbConvertApp] Converting notebook TEST WEBSCRAPING.ipynb to html
-[NbConvertApp] Writing 376000 bytes to TEST WEBSCRAPING.html
+<pre>[NbConvertApp] Converting notebook Energy_Webscraping.ipynb to html
+[NbConvertApp] Writing 365849 bytes to Energy_Webscraping.html
 </pre>
 </div>
 </div>
