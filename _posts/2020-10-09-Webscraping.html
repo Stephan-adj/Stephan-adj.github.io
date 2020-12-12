@@ -255,9 +255,7 @@ th {
   h3 {
     page-break-after: avoid;
   }
-  .navbar {
-    display: none;
-  }
+
   .btn > .caret,
   .dropup > .btn > .caret {
     border-top-color: #000 !important;
@@ -3626,28 +3624,6 @@ tbody.collapse.in {
   left: auto;
 }
 .dropup .caret,
-.navbar-fixed-bottom .dropdown .caret {
-  border-top: 0;
-  border-bottom: 4px dashed;
-  border-bottom: 4px solid \9;
-  content: "";
-}
-.dropup .dropdown-menu,
-.navbar-fixed-bottom .dropdown .dropdown-menu {
-  top: auto;
-  bottom: 100%;
-  margin-bottom: 2px;
-}
-@media (min-width: 541px) {
-  .navbar-right .dropdown-menu {
-    left: auto;
-    right: 0;
-  }
-  .navbar-right .dropdown-menu-left {
-    left: 0;
-    right: auto;
-  }
-}
 .btn-group,
 .btn-group-vertical {
   position: relative;
@@ -5750,14 +5726,6 @@ button.close {
 .btn-toolbar:after,
 .btn-group-vertical > .btn-group:before,
 .btn-group-vertical > .btn-group:after,
-.nav:before,
-.nav:after,
-.navbar:before,
-.navbar:after,
-.navbar-header:before,
-.navbar-header:after,
-.navbar-collapse:before,
-.navbar-collapse:after,
 .pager:before,
 .pager:after,
 .panel-body:before,
@@ -5779,10 +5747,6 @@ button.close {
 .form-horizontal .form-group:after,
 .btn-toolbar:after,
 .btn-group-vertical > .btn-group:after,
-.nav:after,
-.navbar:after,
-.navbar-header:after,
-.navbar-collapse:after,
 .pager:after,
 .panel-body:after,
 .modal-header:after,
@@ -8910,20 +8874,7 @@ span#login_widget > .button .badge,
 * IPython auth
 *
 */
-.center-nav {
-  display: inline-block;
-  margin-bottom: -4px;
-}
-[dir="rtl"] .center-nav form.pull-left {
-  float: right !important;
-  float: right;
-}
-[dir="rtl"] .center-nav .navbar-text {
-  float: right;
-}
-[dir="rtl"] .navbar-inner {
-  text-align: right;
-}
+
 [dir="rtl"] div.text-left {
   text-align: right;
 }
@@ -9382,11 +9333,7 @@ ul#new-menu {
   -webkit-box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
-.edit_app #menubar .navbar {
-  /* Use a negative 1 bottom margin, so the border overlaps the border of the
-    header */
-  margin-bottom: -1px;
-}
+
 .dirty-indicator {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -11916,14 +11863,7 @@ span.autosave_status {
   padding-top: 11px;
   padding-bottom: 3px;
 }
-#maintoolbar .navbar-text {
-  float: none;
-  vertical-align: middle;
-  text-align: right;
-  margin-left: 5px;
-  margin-right: 0px;
-  margin-top: 0px;
-}
+
 .select-xs {
   height: 24px;
 }
