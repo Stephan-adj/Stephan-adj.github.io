@@ -2,7 +2,12 @@
 layout: default
 ---
 
-<script src="https://hypothes.is/embed.js" async></script>
+<script type="application/json" class="js-hypothesis-config">
+{
+"showHighlights": false
+}
+</script>
+<script async src="https://hypothes.is/embed.js"></script>
 
 {% assign author = site.authors[page.author] %}
 <div class="container">
