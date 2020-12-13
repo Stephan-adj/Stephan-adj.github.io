@@ -14,7 +14,7 @@ logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
 baseurl: ''
 email: 'stephan.adjarian@free.fr'
-mailchimp-list: 'http://eepurl.com/hlx-Ov'
+mailchimp-list: 'https://free.us7.list-manage.com/subscribe?u=48b4142296f3862017cd28336&id=1d81101c66'
 
 include: ["_pages"]
 permalink: /:title/
